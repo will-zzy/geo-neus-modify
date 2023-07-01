@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: train",
+            "type": "python",
+            "request": "launch",
+            // "program": "./utils/gen_cameras.py",
+            // "program": "./utils/imgs2poses.py",
+            "program": "exp_runner.py",
+            "args": [
+                "--mode","train",
+                "--conf","./confs/womask.conf",
+                "--case","lego_test"
+
+
+            //    "--scenedir","/home/will/data/public_data/lego_test/",
+            //    "--match_type","sequential_matcher"
+
+
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: gen",
+            "type": "python",
+            "request": "launch",
+            // "program": "./utils/gen_cameras.py",
+            "program": "./utils/imgs2poses.py",
+            // "program": "exp_runner.py",
+            "args": [
+                // "--mode","train",
+                // "--conf","./confs/womask.conf",
+                // "--case","lego_test"
+
+
+               "--scenedir","/home/will/data/public_data/lego_test/",
+            //    "--match_type","sequential_matcher"
+
+
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: colmap2mvsnset",
+            "type": "python",
+            "request": "launch",
+            "program": "./utils/colmap2mvsnet_acm.py",
+            "args": [
+                "--dense_folder","/home/will/data/public_data/lego_test",
+                "--save_folder","/home/will/data/public_data/lego_test/colmap2mvsnet_save",
+                "--model_ext",".bin"
+
+
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
