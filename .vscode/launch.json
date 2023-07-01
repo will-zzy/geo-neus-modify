@@ -8,17 +8,23 @@
             "name": "Python: train",
             "type": "python",
             "request": "launch",
-            // "program": "./utils/gen_cameras.py",
-            // "program": "./utils/imgs2poses.py",
             "program": "exp_runner.py",
             "args": [
                 "--mode","train",
                 "--conf","./confs/womask.conf",
                 "--case","lego_test"
-
-
-            //    "--scenedir","/home/will/data/public_data/lego_test/",
-            //    "--match_type","sequential_matcher"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Python: img2pose",
+            "type": "python",
+            "request": "launch",
+            "program": "./utils/imgs2poses.py",
+            "args": [
+               "--scenedir","/home/will/data/public_data/lego_test/",
+               "--match_type","sequential_matcher"
 
 
             ],
@@ -26,20 +32,13 @@
             "justMyCode": true
         },
         {
-            "name": "Python: gen",
+            "name": "Python: gen_cameras",
             "type": "python",
             "request": "launch",
-            // "program": "./utils/gen_cameras.py",
-            "program": "./utils/imgs2poses.py",
-            // "program": "exp_runner.py",
+            "program": "./utils/gen_cameras.py",
             "args": [
-                // "--mode","train",
-                // "--conf","./confs/womask.conf",
-                // "--case","lego_test"
-
 
                "--scenedir","/home/will/data/public_data/lego_test/",
-            //    "--match_type","sequential_matcher"
 
 
             ],
